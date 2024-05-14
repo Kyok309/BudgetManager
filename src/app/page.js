@@ -1,8 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useContext, useEffect } from "react";
+import UserContext from "@/context/UserStore";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const { user, setUser } = useContext(UserContext);
+    const router = useRouter();
+    useEffect(() => {
+        if (user !== null) {
+            router.push("/dashboard");
+        }
+    }, [user, router]);
   return (
     <div className="bg-[#01143B]">
       <div className="h-32 bg-gradient-to-b from-[#001438] from-60% to-[#01143B] flex justify-between px-8">
