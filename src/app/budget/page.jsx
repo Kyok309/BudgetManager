@@ -62,7 +62,7 @@ export default function Budget() {
       <div className="p-8 w-full h-full ">
         <div className="flex justify-between">
           <div>
-            <h1 className="text-2xl font-bold">Төсөвүүд</h1>
+            <h1 className="text-2xl font-bold">Төсвүүд</h1>
           </div>
           <Button
             type="primary"

@@ -75,7 +75,7 @@ export default function Dashboard() {
         <div className="flex justify-between">
 
           <div>
-            <h1 className="text-2xl font-bold">Орлого Зарлага</h1>
+            <h1 className="text-2xl font-bold">Нийт</h1>
           </div>
           <div></div>
         </div>

@@ -59,7 +59,7 @@ export default function Login() {
                         <div className="text-[#1E3588] text-2xl font-bold mt-8">
                             НЭВТРЭХ
                         </div>
-                        <Input className='w-[80%] mt-4' size='large' placeholder="Нэвтрэх нэр" onChange={onChangeEmail}/>
+                        <Input className='w-[80%] mt-4' size='large' placeholder="И-Мейл" onChange={onChangeEmail}/>
                         <Input className='w-[80%] mt-4' size='large' placeholder="Нууц үг" onChange={onChangePassword}/>
                         <div className='w-[80%] my-4'>
                             <Link href='#'>Нууц үгээ мартсан уу?</Link>

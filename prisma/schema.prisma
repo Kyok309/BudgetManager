@@ -12,79 +12,80 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
 model User {
-  id      Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   firstName String?
   lastName  String?
   phone     String?
-  email   String   @unique
-  password String
-  income  Income[]
-  expense Expense[]
-  budget  Budget[]
+  email     String    @unique
+  password  String
+  income    Income[]
+  expense   Expense[]
+  budget    Budget[]
 }
 
 model IncomeCategory {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
-  income  Income[]
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  income Income[]
 }
 
 model ExpenseCategory {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
+  id      Int       @id @default(autoincrement())
+  name    String    @unique
   expense Expense[]
 }
 
 model Group {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
+  id      Int       @id @default(autoincrement())
+  name    String    @unique
   budget  Budget[]
   income  Income[]
   expense Expense[]
 }
 
 model Income {
-  id      Int      @id @default(autoincrement())
-  name    String
-  amount  Float
-  date    String
-  userId  Int
+  id         Int            @id @default(autoincrement())
+  name       String
+  amount     Float
+  date       String
+  userId     Int
   categoryId Int
-  budgetId Int
-  groupId Int
-  group   Group    @relation(fields: [groupId], references: [id])
-  budget  Budget    @relation(fields: [budgetId], references: [id])
-  user    User     @relation(fields: [userId], references: [id])
-  category IncomeCategory @relation(fields: [categoryId], references: [id])
+  budgetId   Int
+  groupId    Int
+  group      Group          @relation(fields: [groupId], references: [id])
+  budget     Budget         @relation(fields: [budgetId], references: [id])
+  user       User           @relation(fields: [userId], references: [id])
+  category   IncomeCategory @relation(fields: [categoryId], references: [id])
 }
 
 model Expense {
-  id      Int      @id @default(autoincrement())
-  name    String
-  amount  Float
-  date    String
-  userId  Int
+  id         Int             @id @default(autoincrement())
+  name       String
+  amount     Float
+  date       String
+  userId     Int
   categoryId Int
-  budgetId Int
-  groupId Int
-  group   Group    @relation(fields: [groupId], references: [id])
-  budget  Budget    @relation(fields: [budgetId], references: [id])
-  user    User     @relation(fields: [userId], references: [id])
-  category ExpenseCategory @relation(fields: [categoryId], references: [id])
+  budgetId   Int
+  groupId    Int
+  group      Group           @relation(fields: [groupId], references: [id])
+  budget     Budget          @relation(fields: [budgetId], references: [id])
+  user       User            @relation(fields: [userId], references: [id])
+  category   ExpenseCategory @relation(fields: [categoryId], references: [id])
 }
 
 model Budget {
-  id      Int      @id @default(autoincrement())
-  name    String
-  startdate    String
-  enddate    String
+  id          Int       @id @default(autoincrement())
+  name        String
+  startdate   String
+  enddate     String
   planIncome  Float
-  planExpense  Float
-  groupId Int
-  userId  Int
-  user    User     @relation(fields: [userId], references: [id])
-  group   Group    @relation(fields: [groupId], references: [id])
-  expense Expense[]
-  income  Income[]
+  planExpense Float
+  groupId     Int
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id])
+  group       Group     @relation(fields: [groupId], references: [id])
+  expense     Expense[]
+  income      Income[]
 }
