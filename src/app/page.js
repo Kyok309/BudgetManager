@@ -40,8 +40,8 @@ export default function Home() {
         <div className="absolute h-[1200px] min-h-full w-full bg-gradient-to-b from-[#01143B] via-[#00BEFC] to-[#001846] via-70% opacity-90 z-10"></div>
         <div className="flex flex-col h-full min-h-screen z-20 relative px-12 space-y-16">
           <div className="flex w-full">
-            <div className="text-white text-6xl flex-1 flex items-center justify-center text-center font-semibold p-8">
-              ӨРХИЙН ТӨСӨВ <br /> ТӨЛӨВЛӨЛТ
+            <div className="text-white text-6xl flex-1 flex items-center justify-center text-center font-semibold p-8 leading-normal">
+              ӨРХИЙН ТӨСӨВ ТӨЛӨВЛӨЛТ
             </div>
             <div className="text-whitep-8 flex-1 flex items-center justify-center">
               <img src="/images/Business accounting.png" />
